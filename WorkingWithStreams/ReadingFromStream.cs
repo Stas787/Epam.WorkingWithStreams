@@ -17,6 +17,7 @@ namespace WorkingWithStreams
         public static string[] ReadLineByLine(StreamReader streamReader)
         {
             List<string> result = new List<string>();
+
             while (!streamReader.EndOfStream)
             {
                 result.Add(streamReader.ReadLine());
@@ -28,6 +29,7 @@ namespace WorkingWithStreams
         public static StringBuilder ReadOnlyLettersAndNumbers(StreamReader streamReader)
         {
             StringBuilder result = new StringBuilder();
+
             while (streamReader.Peek() > -1 && char.IsLetterOrDigit((char)streamReader.Peek()))
             {
                 char temp = (char)streamReader.Read();
@@ -41,6 +43,7 @@ namespace WorkingWithStreams
         {
             // to Get Length try to use BaseStream, another variants doesn't work
             long length = streamReader.BaseStream.Length / arraySize;
+
             if (streamReader.BaseStream.Length % arraySize != 0)
             {
                 length += 1;

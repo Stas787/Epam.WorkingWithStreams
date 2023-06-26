@@ -37,7 +37,8 @@ namespace WorkingWithStreams
             stringWriter.WriteLine(floatToWrite);
         }
 
-        public static void WriteBooleansWithNewLines(StringWriter stringWriter, bool firstBoolean, bool secondBoolean, bool thirdBoolean)
+        public static void WriteBooleansWithNewLines(StringWriter stringWriter, bool firstBoolean, 
+            bool secondBoolean, bool thirdBoolean)
         {
             stringWriter.WriteLine(firstBoolean);
             stringWriter.WriteLine(secondBoolean);

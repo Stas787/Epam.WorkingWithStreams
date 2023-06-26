@@ -20,6 +20,7 @@ namespace WorkingWithStreams
         public static void ReadAndWriteChars(StreamReader streamReader, StreamWriter outputWriter)
         {
             char[] result = streamReader.ReadToEnd().ToCharArray();
+
             for (int i = 0; i < result.Length; i++)
             {
                 outputWriter.Write(result[i]);
@@ -40,6 +41,7 @@ namespace WorkingWithStreams
         {
             int count = 1;
             StringBuilder resultString = new StringBuilder();
+
             while (!contentReader.EndOfStream)
             {
                 resultString.Append(count.ToString("D3", System.Globalization.CultureInfo.InvariantCulture) + " ").Append(contentReader.ReadLine() + "\r\n");
@@ -55,12 +57,14 @@ namespace WorkingWithStreams
             StringBuilder result = new StringBuilder();
             result.Append(contentReader.ReadToEnd());
             StringBuilder words = new StringBuilder();
+
             while (wordsReader.Peek() > -1)
             {
                 words.Append((char)wordsReader.Read());
             }
 
             string[] wordsStrings = words.ToString().Split('\n');
+
             foreach (string item in wordsStrings)
             {
                 result.Replace(item, string.Empty);
